@@ -16,7 +16,13 @@ sudo apt-get install qtcreator
 - Go to menu "help" -> "plugins"
 - Uncheck "device support" -> "remote linux"
 - Restart Qt Creator
-- Go to "tools" "options" tab "Build & Run" -> "Qt versions" -> add "/usr/bin/qmake-qt4" again.
+- Go to "tools" -> "options", tab "Build & Run" -> "Qt versions" -> add "/usr/bin/qmake-qt4" again.
+
+#### assign GCC compiler
+
+in same tools dialog, in tool chain tab:
+
+- add GCC: /usr/bin/arm-linux-gnueabihf-gcc-4.6
 
 http://qt-project.org/wiki/apt-get_Qt4_on_the_Raspberry_Pi
 
