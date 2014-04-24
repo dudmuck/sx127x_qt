@@ -110,7 +110,7 @@ void FormLora::getRadioStatus_lora(void)
 {
     SX127xLoRa->RegModemConfig1.octet = radio_read(REG_LR_MODEMCONFIG1);
     SX127xLoRa->RegModemConfig2_timeout.word = radio_read_u16(REG_LR_MODEMCONFIG2);
-	SX127xLoRa->RegModemConfig3.octet = radio_read(REG_LR_PPM_CORRECTION_MSB);
+    SX127xLoRa->RegModemConfig3.octet = radio_read(REG_LR_MODEMCONFIG3);
 
     ui->comboBoxSF->setCurrentIndex(SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor-6);
 
@@ -145,7 +145,10 @@ void FormLora::getRadioStatus_lora(void)
 	ui->listWidgetDIO3->setCurrentRow(SX127x.RegDioMapping1.bits.Dio3Mapping);
 	ui->listWidgetDIO2->setCurrentRow(SX127x.RegDioMapping1.bits.Dio2Mapping);
 	ui->listWidgetDIO1->setCurrentRow(SX127x.RegDioMapping1.bits.Dio1Mapping);
-	ui->listWidgetDIO0->setCurrentRow(SX127x.RegDioMapping1.bits.Dio0Mapping);
+    ui->listWidgetDIO0->setCurrentRow(SX127x.RegDioMapping1.bits.Dio0Mapping);
+
+    SX127xLoRa->RegTest31.octet = radio_read(REG_LR_TEST31);
+
 }
 
 int FormLora::_lora_start_tx(void)
@@ -183,14 +186,69 @@ void FormLora::on_comboBoxSF_currentIndexChanged(int index)
 {
     SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor = index + 6;
     radio_write_u16(REG_LR_MODEMCONFIG2, SX127xLoRa->RegModemConfig2_timeout.word);
+
+    switch (SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor) {
+        case 6:
+            set_nb_trig_peaks(3);
+            break;
+        case 7:
+            set_nb_trig_peaks(4);
+            break;
+        default:
+            set_nb_trig_peaks(5);
+            break;
+    }
+
+    if (SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor < 7)
+        radio_write(REG_LR_DETECTION_THRESHOLD, 0x0c);
+    else
+        radio_write(REG_LR_DETECTION_THRESHOLD, 0x0a);
+
+
+    if (!sx1276) {
+        SX127xLoRa->RegModemConfig1.sx1272bits.CodingRate = index;
+        if (index > 10 && SX127xLoRa->RegModemConfig1.sx1276bits.Bw == 0)
+            SX127xLoRa->RegModemConfig1.sx1272bits.LowDataRateOptimize = 1;
+        else
+            SX127xLoRa->RegModemConfig1.sx1272bits.LowDataRateOptimize = 0;
+        radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
+        ui->checkBoxLDRO->setChecked(SX127xLoRa->RegModemConfig1.sx1272bits.LowDataRateOptimize);
+
+        if (SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor == 6) {
+            SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn = 1;
+            ui->checkBoxImplicit->setChecked(SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn);
+            radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
+        }
+    } else {
+        SX127xLoRa->RegModemConfig1.sx1276bits.CodingRate = index;
+        if (index > 10 && SX127xLoRa->RegModemConfig1.sx1276bits.Bw < 8)
+            SX127xLoRa->RegModemConfig3.sx1276bits.LowDataRateOptimize = 1;
+        else
+            SX127xLoRa->RegModemConfig3.sx1276bits.LowDataRateOptimize = 0;
+        radio_write(REG_LR_MODEMCONFIG3, SX127xLoRa->RegModemConfig3.octet);
+        ui->checkBoxLDRO->setChecked(SX127xLoRa->RegModemConfig3.sx1276bits.LowDataRateOptimize);
+
+        if (SX127xLoRa->RegModemConfig2_timeout.sx1272bits.SpreadingFactor == 6) {
+            SX127xLoRa->RegModemConfig1.sx1276bits.ImplicitHeaderModeOn = 1;
+            radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
+            ui->checkBoxImplicit->setChecked(SX127xLoRa->RegModemConfig1.sx1276bits.ImplicitHeaderModeOn);
+        }
+    }
+
+}
+
+void FormLora::set_nb_trig_peaks(int n)
+{
+    SX127xLoRa->RegTest31.bits.detect_trig_same_peaks_nb = n;
+    radio_write(REG_LR_TEST31, SX127xLoRa->RegTest31.octet);
 }
 
 void FormLora::on_comboBoxCR_currentIndexChanged(int index)
 {
-    if (sx1276) {
-        SX127xLoRa->RegModemConfig1.sx1276bits.CodingRate = index;
-    } else {
+    if (!sx1276) {
         SX127xLoRa->RegModemConfig1.sx1272bits.CodingRate = index;
+    } else {
+        SX127xLoRa->RegModemConfig1.sx1276bits.CodingRate = index;
     }
     radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
 }
@@ -255,7 +313,7 @@ void FormLora::on_checkBoxLDRO_clicked(bool checked)
 {
 	if (sx1276) {
 		SX127xLoRa->RegModemConfig3.sx1276bits.LowDataRateOptimize = checked;
-		radio_write(REG_LR_PPM_CORRECTION_MSB, SX127xLoRa->RegModemConfig3.octet);
+        radio_write(REG_LR_MODEMCONFIG3, SX127xLoRa->RegModemConfig3.octet);
 	} else {
 		SX127xLoRa->RegModemConfig1.sx1272bits.LowDataRateOptimize = checked;
 		radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
@@ -266,7 +324,7 @@ void FormLora::on_checkBoxLoraAGCAutoOn_clicked(bool checked)
 {
 	if (sx1276) {
 		SX127xLoRa->RegModemConfig3.sx1276bits.AgcAutoOn = checked;
-		radio_write(REG_LR_PPM_CORRECTION_MSB, SX127xLoRa->RegModemConfig3.octet);
+        radio_write(REG_LR_MODEMCONFIG3, SX127xLoRa->RegModemConfig3.octet);
 	} else {
 		SX127xLoRa->RegModemConfig2_timeout.sx1272bits.AgcAutoOn = checked;
 		radio_write_u16(REG_LR_MODEMCONFIG2, SX127xLoRa->RegModemConfig2_timeout.word);

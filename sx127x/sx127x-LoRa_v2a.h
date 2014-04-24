@@ -47,7 +47,7 @@
 #define REG_LR_RX_MAX_PAYLOADLENGTH                 0x23 // length limit for explicit mode
 #define REG_LR_HOPPERIOD                            0x24
 #define REG_LR_RXBYTEADDR /*REG_LR_RXDATAADDR*/     0x25
-#define REG_LR_PPM_CORRECTION_MSB                   0x26
+#define REG_LR_MODEMCONFIG3		                    0x26	// PPM_CORRECTION_MSB
 #define REG_LR_PPM_CORRECTION_LSB                   0x27
 #define REG_LR_TEST28                               0x28  // est_freq_error
 #define REG_LR_TEST29                               0x29    // est_freq_error
@@ -61,6 +61,7 @@
 #define REG_LR_TEST31                               0x31    // if_freq_auto, ...
 #define REG_LR_TEST32                               0x32    // 
 #define REG_LR_TEST33                               0x33
+#define REG_LR_DETECTION_THRESHOLD					0x37
 /***** registers above 0x40 are same as FSK/OOK page in sx1272-common_regs.h *****/
 
 /*!

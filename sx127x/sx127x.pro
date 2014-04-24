@@ -22,7 +22,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     spi.h \
-    sx1272-common_regs.h \
+    sx12xx-common_regs.h \
     sx127x-LoRa_v2a.h \
     sx12xx-Fsk.h \
     mylistwidget.h \

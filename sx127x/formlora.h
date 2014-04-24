@@ -43,7 +43,8 @@ public:
     void timerEvent(QTimerEvent *);
 	int diopoll_tid;
 	QTabWidget *tabWidget;	// public access
-    
+    void set_nb_trig_peaks(int);
+
 private slots:
     void on_comboBoxSF_currentIndexChanged(int index);
 
