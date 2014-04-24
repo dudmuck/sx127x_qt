@@ -20,7 +20,7 @@
 #include <QFileDialog>
 #include <math.h>
 
-#include "formlora.h"
+//#include "formlora.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -1030,14 +1030,18 @@ void MainWindow::on_pushButtonPktTXRun_clicked(bool checked)
         stop_(STOP_RX_RUN);
         pkt_count = 0;
         ui->labelPktCnt->setText("0");
-		if (SX127x.RegOpMode.fsk_bits.LongRangeMode) {
+        if (SX127x.RegOpMode.fsk_bits.LongRangeMode) {
 			if (SX127x.RegDioMapping1.bits.Dio0Mapping != 1) {
 				SX127x.RegDioMapping1.bits.Dio0Mapping = 1;	// to TxDone
 				radio_write(REG_DIOMAPPING1, SX127x.RegDioMapping1.octet);
-			}
-			rf_buf_len = ui->plainTextEdit_payload_ascii->document()->toPlainText().size();
-			SX127xLoRa->RegPayloadLength = rf_buf_len;
-			radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPayloadLength);
+            }
+            if (SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn) {
+                rf_buf_len = SX127xLoRa->RegPayloadLength;
+                //fprintf(stderr, "implict lora len %d\n", rf_buf_len);
+            } else {
+                rf_buf_len = ui->plainTextEdit_payload_ascii->document()->toPlainText().size();
+                ui->widget_lora->set_payload_length(rf_buf_len);
+            }
 		} else {
 			if (SX127x.RegDioMapping1.bits.Dio0Mapping != 0) {
 				ui->listWidgetDIO0FSK->setCurrentRow(0); // to PacketSent

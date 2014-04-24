@@ -297,15 +297,22 @@ void FormLora::on_checkBoxImplicit_clicked(bool checked)
     radio_write(REG_LR_MODEMCONFIG1, SX127xLoRa->RegModemConfig1.octet);
 }
 
+void FormLora::set_payload_length(int len)
+{
+    SX127xLoRa->RegPayloadLength = len;
+    ui->spinBoxPayloadLength->setValue(SX127xLoRa->RegPayloadLength);
+    radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPreambleLength);
+}
+
 void FormLora::on_spinBoxPayloadLength_editingFinished()
 {
-	SX127xLoRa->RegPayloadLength = ui->spinBoxPayloadLength->value();
-	radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPreambleLength);
+    SX127xLoRa->RegPayloadLength = ui->spinBoxPayloadLength->value();
+    radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPreambleLength);
 }
 
 void FormLora::on_spinBoxSymbTimeout_editingFinished()
 {
-	SX127xLoRa->RegModemConfig2_timeout.sx1276bits.SymbTimeout = ui->spinBoxSymbTimeout->value();
+    SX127xLoRa->RegModemConfig2_timeout.sx1276bits.SymbTimeout = ui->spinBoxSymbTimeout->value();
     radio_write_u16(REG_LR_MODEMCONFIG2, SX127xLoRa->RegModemConfig2_timeout.word);
 }
 

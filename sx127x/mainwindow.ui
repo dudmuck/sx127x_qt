@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>914</width>
-    <height>1150</height>
+    <width>1000</width>
+    <height>1159</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -155,7 +155,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="LoraPage">
        <property name="sizePolicy">
@@ -206,7 +206,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_2">
            <property name="sizePolicy">
@@ -2849,7 +2849,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>914</width>
+     <width>1000</width>
      <height>22</height>
     </rect>
    </property>
