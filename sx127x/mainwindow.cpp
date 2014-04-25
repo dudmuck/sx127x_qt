@@ -1040,10 +1040,11 @@ void MainWindow::on_pushButtonPktTXRun_clicked(bool checked)
                 //fprintf(stderr, "implict lora len %d\n", rf_buf_len);
             } else {
                 rf_buf_len = ui->plainTextEdit_payload_ascii->document()->toPlainText().size();
+                fprintf(stderr, "explicit tx len %d\n", rf_buf_len);
                 ui->widget_lora->set_payload_length(rf_buf_len);
             }
 		} else {
-			if (SX127x.RegDioMapping1.bits.Dio0Mapping != 0) {
+            if (SX127x.RegDioMapping1.bits.Dio0Mapping != 0) {
 				ui->listWidgetDIO0FSK->setCurrentRow(0); // to PacketSent
 				SX127x.RegDioMapping1.bits.Dio0Mapping = 0;
 				radio_write(REG_DIOMAPPING1, SX127x.RegDioMapping1.octet);

@@ -162,6 +162,8 @@ int FormLora::_lora_start_tx(void)
         killTimer(pkt_tid);
 		ret = 1;
     } else { // transmit a packet (start pkt tx)
+        SX127xLoRa->RegPayloadLength = radio_read(REG_LR_PAYLOADLENGTH);
+        fprintf(stderr, "lora start tx %d, regpayloadlen:%d\n", rf_buf_len, SX127xLoRa->RegPayloadLength);
 		radio_lora_write_fifo(rf_buf, rf_buf_len);
 		set_opmode(RF_OPMODE_TRANSMITTER);
 	}
@@ -304,7 +306,7 @@ void FormLora::set_payload_length(int len)
 {
     SX127xLoRa->RegPayloadLength = len;
     ui->spinBoxPayloadLength->setValue(SX127xLoRa->RegPayloadLength);
-    radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPreambleLength);
+    radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPayloadLength);
 }
 
 void FormLora::on_spinBoxPayloadLength_editingFinished()
