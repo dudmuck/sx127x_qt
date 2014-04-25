@@ -59,7 +59,7 @@ private slots:
 
     void on_checkBoxImplicit_clicked(bool checked);
 
-    void on_spinBoxPayloadLength_editingFinished();
+    //void on_spinBoxPayloadLength_editingFinished();
 
     void on_spinBoxSymbTimeout_editingFinished();
 
@@ -84,6 +84,8 @@ private slots:
     void on_tabWidget_currentChanged(int index);
 
     void on_spinBoxMaxPayloadLength_valueChanged(int arg1);
+
+    void on_spinBoxPayloadLength_valueChanged(int arg1);
 
 private:
     Ui::FormLora *ui;

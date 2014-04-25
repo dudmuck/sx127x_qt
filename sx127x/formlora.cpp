@@ -309,11 +309,11 @@ void FormLora::set_payload_length(int len)
     radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPayloadLength);
 }
 
-void FormLora::on_spinBoxPayloadLength_editingFinished()
+/*void FormLora::on_spinBoxPayloadLength_editingFinished()
 {
     SX127xLoRa->RegPayloadLength = ui->spinBoxPayloadLength->value();
     radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPreambleLength);
-}
+}*/
 
 void FormLora::on_spinBoxSymbTimeout_editingFinished()
 {
@@ -403,4 +403,11 @@ void FormLora::on_spinBoxMaxPayloadLength_valueChanged(int arg1)
 {
     SX127xLoRa->RegRxMaxPayloadLength = arg1;
     radio_write(REG_LR_RX_MAX_PAYLOADLENGTH, SX127xLoRa->RegRxMaxPayloadLength);
+}
+
+void FormLora::on_spinBoxPayloadLength_valueChanged(int arg1)
+{
+    fprintf(stderr, "spinBoxPayloadLength: %d\n", arg1);
+    SX127xLoRa->RegPayloadLength = arg1;
+    radio_write(REG_LR_PAYLOADLENGTH, SX127xLoRa->RegPayloadLength);
 }
