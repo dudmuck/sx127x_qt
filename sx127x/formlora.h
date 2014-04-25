@@ -83,6 +83,8 @@ private slots:
 
     void on_tabWidget_currentChanged(int index);
 
+    void on_spinBoxMaxPayloadLength_valueChanged(int arg1);
+
 private:
     Ui::FormLora *ui;
 };

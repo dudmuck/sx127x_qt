@@ -140,6 +140,9 @@ void FormLora::getRadioStatus_lora(void)
 	SX127xLoRa->RegPayloadLength = radio_read(REG_LR_PAYLOADLENGTH);
 	ui->spinBoxPayloadLength->setValue(SX127xLoRa->RegPayloadLength);
 
+    SX127xLoRa->RegRxMaxPayloadLength = radio_read(REG_LR_RX_MAX_PAYLOADLENGTH);
+    ui->spinBoxMaxPayloadLength->setValue(SX127xLoRa->RegRxMaxPayloadLength);
+
 	ui->listWidgetDIO5->setCurrentRow(SX127x.RegDioMapping2.bits.Dio5Mapping);
 	ui->listWidgetDIO4->setCurrentRow(SX127x.RegDioMapping2.bits.Dio4Mapping);
 	ui->listWidgetDIO3->setCurrentRow(SX127x.RegDioMapping1.bits.Dio3Mapping);
@@ -393,3 +396,9 @@ void FormLora::on_tabWidget_currentChanged(int index)
 	}
 }
 
+
+void FormLora::on_spinBoxMaxPayloadLength_valueChanged(int arg1)
+{
+    SX127xLoRa->RegRxMaxPayloadLength = arg1;
+    radio_write(REG_LR_RX_MAX_PAYLOADLENGTH, SX127xLoRa->RegRxMaxPayloadLength);
+}
