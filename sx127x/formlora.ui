@@ -166,6 +166,35 @@
           <property name="spacing">
            <number>3</number>
           </property>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBoxCR">
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4/5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4/6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4/7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4/8</string>
+             </property>
+            </item>
+           </widget>
+          </item>
           <item row="1" column="2">
            <widget class="QCheckBox" name="checkBoxImplicit">
             <property name="text">
@@ -235,46 +264,10 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QComboBox" name="comboBoxCR">
-            <item>
-             <property name="text">
-              <string>None</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4/5</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4/6</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4/7</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4/8</string>
-             </property>
-            </item>
-           </widget>
-          </item>
           <item row="0" column="3">
            <widget class="QSpinBox" name="spinBoxPreambleLength">
             <property name="maximum">
              <number>65535</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QCheckBox" name="checkBoxCrcOn">
-            <property name="text">
-             <string>Payload CRC</string>
             </property>
            </widget>
           </item>
@@ -308,17 +301,24 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="2">
+          <item row="5" column="0">
+           <widget class="QCheckBox" name="checkBoxTxContinuousMode">
+            <property name="text">
+             <string>TxContinuousMode (repeat TX)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" colspan="2">
            <widget class="QCheckBox" name="checkBoxLDRO">
             <property name="text">
              <string>LowDataRateOptimize</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QCheckBox" name="checkBoxTxContinuousMode">
+          <item row="3" column="1" colspan="2">
+           <widget class="QCheckBox" name="checkBoxCrcOn">
             <property name="text">
-             <string>TxContinuousMode (repeat TX)</string>
+             <string>Payload CRC</string>
             </property>
            </widget>
           </item>

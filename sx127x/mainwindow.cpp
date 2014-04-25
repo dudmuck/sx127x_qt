@@ -1037,10 +1037,10 @@ void MainWindow::on_pushButtonPktTXRun_clicked(bool checked)
             }
             if (SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn) {
                 rf_buf_len = SX127xLoRa->RegPayloadLength;
-                fprintf(stderr, "implict lora len %d\n", rf_buf_len);
+                //fprintf(stderr, "implict lora len %d\n", rf_buf_len);
             } else {
                 rf_buf_len = ui->plainTextEdit_payload_ascii->document()->toPlainText().size();
-                fprintf(stderr, "explicit tx len %d\n", rf_buf_len);
+                //fprintf(stderr, "explicit tx len %d\n", rf_buf_len);
                 ui->widget_lora->set_payload_length(rf_buf_len);
             }
 		} else {
