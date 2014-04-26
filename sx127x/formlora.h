@@ -45,6 +45,7 @@ public:
 	QTabWidget *tabWidget;	// public access
     void set_nb_trig_peaks(int);
     void set_payload_length(int);
+    bool is_implicit_header_mode(void);
 
 private slots:
     void on_comboBoxSF_currentIndexChanged(int index);

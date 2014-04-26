@@ -1035,7 +1035,7 @@ void MainWindow::on_pushButtonPktTXRun_clicked(bool checked)
 				SX127x.RegDioMapping1.bits.Dio0Mapping = 1;	// to TxDone
 				radio_write(REG_DIOMAPPING1, SX127x.RegDioMapping1.octet);
             }
-            if (SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn) {
+            if (ui->widget_lora->is_implicit_header_mode()) {
                 rf_buf_len = SX127xLoRa->RegPayloadLength;
                 //fprintf(stderr, "implict lora len %d\n", rf_buf_len);
             } else {

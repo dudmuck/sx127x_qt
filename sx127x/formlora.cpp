@@ -291,6 +291,16 @@ void FormLora::on_spinBoxPreambleLength_editingFinished()
 	radio_write_u16(REG_LR_PREAMBLEMSB, SX127xLoRa->RegPreambleLength);
 }
 
+bool FormLora::is_implicit_header_mode()
+{
+    if (sx1276) {
+        return SX127xLoRa->RegModemConfig1.sx1276bits.ImplicitHeaderModeOn;
+    } else {
+        return SX127xLoRa->RegModemConfig1.sx1272bits.ImplicitHeaderModeOn;
+    }
+
+}
+
 void FormLora::on_checkBoxImplicit_clicked(bool checked)
 {
     if (sx1276) {
