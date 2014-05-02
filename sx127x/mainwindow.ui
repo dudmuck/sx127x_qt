@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>1159</height>
+    <height>1234</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -155,7 +155,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="LoraPage">
        <property name="sizePolicy">
@@ -206,7 +206,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab_2">
            <property name="sizePolicy">
@@ -405,185 +405,7 @@
             <property name="spacing">
              <number>3</number>
             </property>
-            <item row="0" column="0">
-             <widget class="QGroupBox" name="groupBoxRXBW">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="title">
-               <string>Bandwidth</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_9">
-               <item row="0" column="1">
-                <widget class="QComboBox" name="comboBoxRXBW"/>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="comboBoxAfcBW"/>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>RX filter bandwidth:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>AFC filter bandwidth:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QGroupBox" name="groupBoxAFC">
-              <property name="title">
-               <string>AFC</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_11">
-               <property name="margin">
-                <number>3</number>
-               </property>
-               <property name="spacing">
-                <number>3</number>
-               </property>
-               <item row="0" column="0">
-                <widget class="QCheckBox" name="checkBoxAfcAutoOn">
-                 <property name="text">
-                  <string>AfcAutoOn</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QCheckBox" name="checkBoxAfcAutoClearOn">
-                 <property name="text">
-                  <string>AfcAutoClearOn</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="labelAfcValue">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QPushButton" name="pushButtonAfcClear">
-                 <property name="text">
-                  <string>AfcClear</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="labelFEIValue">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_20">
-                 <property name="text">
-                  <string>FEI:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QGroupBox" name="groupBoxPreamble">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="title">
-               <string>Preamble detection</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_12">
-               <property name="margin">
-                <number>3</number>
-               </property>
-               <property name="spacing">
-                <number>3</number>
-               </property>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_18">
-                 <property name="text">
-                  <string>Size:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QComboBox" name="comboBoxPreambleDetSize">
-                 <item>
-                  <property name="text">
-                   <string>1 byte</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>2 bytes</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>3 bytes</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QCheckBox" name="checkBoxPreambleDetEnable">
-                 <property name="text">
-                  <string>enable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_19">
-                 <property name="text">
-                  <string>error tolerance:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QSpinBox" name="spinBoxPreambleErrTol">
-                 <property name="suffix">
-                  <string/>
-                 </property>
-                 <property name="maximum">
-                  <number>31</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="3" column="1">
+            <item row="3" column="2">
              <widget class="QGroupBox" name="groupBoxRxRestart">
               <property name="title">
                <string>Rx startup control</string>
@@ -657,7 +479,173 @@
               </layout>
              </widget>
             </item>
-            <item row="2" column="1">
+            <item row="2" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBox_8">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>AGC</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_19">
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButtonAgcStart">
+                 <property name="text">
+                  <string>AgcStart</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="checkBoxAgcAutoOn">
+                 <property name="text">
+                  <string>AgcAutoOn</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxPreamble">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="title">
+               <string>Preamble detection</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_12">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_18">
+                 <property name="text">
+                  <string>Size:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxPreambleDetSize">
+                 <item>
+                  <property name="text">
+                   <string>1 byte</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>2 bytes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>3 bytes</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QCheckBox" name="checkBoxPreambleDetEnable">
+                 <property name="text">
+                  <string>enable</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_19">
+                 <property name="text">
+                  <string>error tolerance:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QSpinBox" name="spinBoxPreambleErrTol">
+                 <property name="suffix">
+                  <string/>
+                 </property>
+                 <property name="maximum">
+                  <number>31</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QGroupBox" name="groupBoxAFC">
+              <property name="title">
+               <string>AFC</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_11">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="checkBoxAfcAutoOn">
+                 <property name="text">
+                  <string>AfcAutoOn</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QCheckBox" name="checkBoxAfcAutoClearOn">
+                 <property name="text">
+                  <string>AfcAutoClearOn</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="labelAfcValue">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="pushButtonAfcClear">
+                 <property name="text">
+                  <string>AfcClear</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="labelFEIValue">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_20">
+                 <property name="text">
+                  <string>FEI:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="2" column="2">
              <widget class="QGroupBox" name="groupBox_7">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -795,23 +783,41 @@
               </layout>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QGroupBox" name="groupBox_8">
-              <property name="title">
-               <string>AGC</string>
+            <item row="0" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBoxRXBW">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
               </property>
-              <layout class="QGridLayout" name="gridLayout_19">
+              <property name="title">
+               <string>Bandwidth</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxRXBW"/>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxAfcBW"/>
+               </item>
                <item row="0" column="0">
-                <widget class="QPushButton" name="pushButtonAgcStart">
+                <widget class="QLabel" name="label_12">
                  <property name="text">
-                  <string>AgcStart</string>
+                  <string>RX filter bandwidth:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
                <item row="1" column="0">
-                <widget class="QCheckBox" name="checkBoxAgcAutoOn">
+                <widget class="QLabel" name="label_13">
                  <property name="text">
-                  <string>AgcAutoOn</string>
+                  <string>AFC filter bandwidth:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
@@ -1141,7 +1147,7 @@
             <item row="1" column="0">
              <widget class="QLabel" name="label_37">
               <property name="text">
-               <string>Preamble size:</string>
+               <string>TX Preamble size:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1515,32 +1521,6 @@
               </property>
              </widget>
             </item>
-            <item row="11" column="3">
-             <widget class="QGroupBox" name="groupBox_6">
-              <property name="title">
-               <string>Device status</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_17">
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_52">
-                 <property name="text">
-                  <string>AFC:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="labelPktAFCValue">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
             <item row="6" column="1">
              <widget class="QSpinBox" name="spinBoxFSKSyncSize">
               <property name="sizePolicy">
@@ -1715,6 +1695,41 @@
             </item>
            </layout>
           </widget>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBoxFSKstatus">
+          <property name="title">
+           <string>FSK</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_28">
+           <property name="horizontalSpacing">
+            <number>3</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
+           <property name="margin">
+            <number>2</number>
+           </property>
+           <item row="0" column="1">
+            <widget class="QLabel" name="labelPktAFCValue">
+             <property name="text">
+              <string>-</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelAFC">
+             <property name="text">
+              <string>AFC Value:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -2391,6 +2406,142 @@
       </widget>
      </widget>
     </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBoxPayload">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Payload</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_15">
+       <item row="1" column="0">
+        <widget class="QPlainTextEdit" name="plainTextEdit_payload_hex"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_28">
+         <property name="text">
+          <string>HEXADECIMAL</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>ASCII</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPlainTextEdit" name="plainTextEdit_payload_ascii"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Control</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButtonPktTXRun">
+            <property name="text">
+             <string>Start TX</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>TX interval:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinBoxFSKRepeat">
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>10000</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QSpinBox" name="spinBoxTxInterval">
+            <property name="minimum">
+             <number>10</number>
+            </property>
+            <property name="maximum">
+             <number>2000</number>
+            </property>
+            <property name="singleStep">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_32">
+            <property name="text">
+             <string>Repeat value:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="labelPktCnt">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_30">
+            <property name="text">
+             <string>pkt count:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButtonPktRXRun">
+            <property name="text">
+             <string>Start RX</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="1">
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <property name="spacing">
@@ -2705,142 +2856,6 @@
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBoxPayload">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="title">
-       <string>Payload</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_15">
-       <item row="1" column="0">
-        <widget class="QPlainTextEdit" name="plainTextEdit_payload_hex"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_28">
-         <property name="text">
-          <string>HEXADECIMAL</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="label_29">
-         <property name="text">
-          <string>ASCII</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPlainTextEdit" name="plainTextEdit_payload_ascii"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QGroupBox" name="groupBox_3">
-         <property name="title">
-          <string>Control</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_16">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButtonPktTXRun">
-            <property name="text">
-             <string>Start TX</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="label_31">
-            <property name="text">
-             <string>TX interval:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QSpinBox" name="spinBoxFSKRepeat">
-            <property name="minimum">
-             <number>-1</number>
-            </property>
-            <property name="maximum">
-             <number>10000</number>
-            </property>
-            <property name="value">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QSpinBox" name="spinBoxTxInterval">
-            <property name="minimum">
-             <number>10</number>
-            </property>
-            <property name="maximum">
-             <number>2000</number>
-            </property>
-            <property name="singleStep">
-             <number>10</number>
-            </property>
-            <property name="value">
-             <number>100</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_32">
-            <property name="text">
-             <string>Repeat value:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="labelPktCnt">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_30">
-            <property name="text">
-             <string>pkt count:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButtonPktRXRun">
-            <property name="text">
-             <string>Start RX</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
     </item>
    </layout>
   </widget>

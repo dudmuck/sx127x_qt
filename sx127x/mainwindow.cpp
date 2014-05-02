@@ -500,6 +500,8 @@ void MainWindow::getRadioStatus_fsk()
     ui->spinBoxPreambleErrTol->setValue(SX127xFSK->RegPreambleDetect.bits.PreambleDetectorTol);
 
     ui->checkBoxAfcAutoOn->setChecked(SX127xFSK->RegRxConfig.bits.AfcAutoOn);
+    ui->labelPktAFCValue->setEnabled(SX127xFSK->RegRxConfig.bits.AfcAutoOn);
+    ui->labelAFC->setEnabled(SX127xFSK->RegRxConfig.bits.AfcAutoOn);
     ui->checkBoxRestartRxOnCollision->setChecked(SX127xFSK->RegRxConfig.bits.RestartRxOnCollision);
     switch (SX127xFSK->RegRxConfig.bits.RxTrigger) {
         case 0: ui->comboBoxRxTrigger->setCurrentIndex(0); break; // none
@@ -1194,6 +1196,9 @@ void MainWindow::on_checkBoxAfcAutoOn_clicked(bool checked)
 {
     SX127xFSK->RegRxConfig.bits.AfcAutoOn = checked;
     radio_write(REG_FSK_RXCONFIG, SX127xFSK->RegRxConfig.octet);
+
+    ui->labelPktAFCValue->setEnabled(checked);
+    ui->labelAFC->setEnabled(checked);
 }
 
 void MainWindow::on_checkBoxAfcAutoClearOn_clicked(bool checked)
