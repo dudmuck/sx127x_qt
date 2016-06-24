@@ -19,6 +19,7 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <math.h>
+#include <unistd.h>
 
 //#include "formlora.h"
 

@@ -5,26 +5,15 @@ QT GUI for evaluating [SX1272](http://semtech.com/apps/product.php?pn=sx1272&x=0
 
 ## Preparing Raspberry Pi for build
 
-ensure your RPi is up to date http://elinux.org/Add_software
+ensure your RPi is up to date http://elinux.org/index.php?title=Add_software_to_Raspberry_Pi
 
 ### install qt-creator
 
-sudo apt-get install qtcreator
+Follow [these instructions](https://wiki.qt.io/Apt-get_Qt4_on_the_Raspberry_Pi) for installing QT4 and qtcreator.
 
-### first-time setup of qt-creator on RPi
+### first-time setup of qt-creator on RPi, and toolchain assignment
 
-- Go to menu "help" -> "plugins"
-- Uncheck "device support" -> "remote linux"
-- Restart Qt Creator
-- Go to "tools" -> "options", tab "Build & Run" -> "Qt versions" -> add "/usr/bin/qmake-qt4" again.
-
-#### assign GCC compiler
-
-in same tools dialog, in tool chain tab:
-
-- add GCC: /usr/bin/arm-linux-gnueabihf-gcc-4.6
-
-http://qt-project.org/wiki/apt-get_Qt4_on_the_Raspberry_Pi
+Also described in the [same instructions](https://wiki.qt.io/Apt-get_Qt4_on_the_Raspberry_Pi).
 
 # wiringPi installation
 

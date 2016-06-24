@@ -1264,6 +1264,7 @@ void FormIEEE802154g::on_checkBoxWrongBitEnable_clicked(bool checked)
 
 void FormIEEE802154g::on_spinBoxWrongBit_valueChanged(int arg1)
 {
+	(void)arg1;
     set_sfd(ui->checkBoxFECenable->isChecked());
 }
 
